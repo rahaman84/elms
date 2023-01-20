@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
-import { Fragment } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
-
-class TopNavigation extends Component {
-    render() {
-        return (
-
-            <Fragment>
-
-                <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">E-LEARNING</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
-
-                        </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">HOME</Nav.Link>
-                            <Nav.Link href="#deets">ABOUT</Nav.Link>
-                            <Nav.Link href="#deets">SERVICE</Nav.Link>
-                            <Nav.Link href="#deets">COURSES</Nav.Link>
-                            <Nav.Link href="#deets">PORTFOLIO</Nav.Link>
-                            <Nav.Link href="#deets">CONTACT US</Nav.Link>
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+function CollapsibleExample() {
+    return (
+        <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand href="#home">LEARN WITH PROFESSIONALS</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
 
-            </Fragment>
-        )
-    }
+                    </Nav>
+                    <Nav>
+                    <Nav.Link href="#deets">Home</Nav.Link>
+                    <Nav.Link href="#deets">About</Nav.Link>
+                    <Nav.Link href="#deets">Services</Nav.Link>
+                    <Nav.Link href="#deets">Courses</Nav.Link>
+                    <Nav.Link href="#deets">Protfolio</Nav.Link>
+                    <Nav.Link href="#deets">Get in Touch</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
-export default TopNavigation
+export default CollapsibleExample;
