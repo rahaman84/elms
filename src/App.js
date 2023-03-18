@@ -1,16 +1,22 @@
-import React from "react";
-import TopBanner from "./components/TopBanner/TopBanner";
-import Services from "./components/Services/Services";
-import TopNavigation from "./components/TopNavigation/TopNavigation";
+import React, { Fragment } from 'react';
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from './router/AppRouter';
+
 
 function App() {
   return (
-    <div >
-      <TopNavigation/>
-      <TopBanner/>
-      <Services/>
-    </div>
-  );
-}
 
-export default App;
+
+    <BrowserRouter>
+
+        <AppRouter />
+
+    </BrowserRouter>
+
+  );
+} export default App;
+
+
+
+
+
