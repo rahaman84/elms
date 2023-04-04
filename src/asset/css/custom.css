@@ -10,7 +10,7 @@
     position: absolute;
     min-height: 550px;
     width: 100%;
-    background: rgb(0, 0, 0,0.7);
+    background: rgba(14, 14, 16, 0.47);
 }
 .topContent{
     margin-top: 15em;
@@ -113,7 +113,7 @@
     font-family: 'Montserrat',sans-serif;
     color: #ffffff;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
     padding-right: 15px;
 }
 .navItemScroll{

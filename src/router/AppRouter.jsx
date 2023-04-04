@@ -11,12 +11,17 @@ import TremsPage from '../pages/TremsPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailPage from '../pages/ProjectDetailPage';  
 import CourseDetailsPage from '../pages/CourseDetailsPage';
+import ProjectDetails from '../components/ProjectDetails/ProjectDetails';
 
 
 class AppRouter extends Component {
+
+
+
      render() {
           return (
                <Fragment>
+                   
               
               <Routes>
           <Route exact path='/' element={<HomePage/>} />
@@ -31,7 +36,8 @@ class AppRouter extends Component {
           <Route exact path="/trems" element={<TremsPage/>} />  
           <Route exact path="/privacy" element={<PrivacyPage/>} />
 
-          <Route exact path="/projectdetails" element={<ProjectDetailPage/>} />
+          <Route exact path="/ProjectDetails/:projectID/:projectName" component={ProjectDetailPage} />
+          {/* <Route exact path="/ProjectDetails/:projectID" element={<ProjectDetails />} />  */}
           <Route exact path="/coursedetails" element={<CourseDetailsPage/>} />
      
 
@@ -40,6 +46,8 @@ class AppRouter extends Component {
            
          
           </Routes>
+        
+          
 
                </Fragment>
           )

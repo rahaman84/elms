@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
+import ReactHtmlParser from 'react-html-parser';
 
  class Analysis extends Component {
 
@@ -8,25 +11,34 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
                 super();
                 this.state={
-                    data:[
-                        
-                        {Technolgy:'PHP', Projects:100},
-                        {Technolgy:'Mysql', Projects:90},
-                        {Technolgy:'Laravel', Projects:80},
-                        {Technolgy:'React', Projects:95},
-                        {Technolgy:'JavaScript', Projects:70},
-                        {Technolgy:'HTML', Projects:40},
-                        {Technolgy:'CSS', Projects:50}
-                    
-                    ]
+                    data:[],
+                    techdesc:"..."
                 }
             }
+
+            componentDidMount(){
+                RestClient.GetRequest(AppUrl.ChartData).then(result=>{
+                     this.setState({data:result});
+                }) 
+                 RestClient.GetRequest(AppUrl.HomeTechDesc).then(result=>{
+                     this.setState({techdesc:result[0]['tech_description']});
+                }) 
+           }
 
 
 
   render() {
 
     var blue = "#051b35";
+
+
+    const MyList = this.state.data;
+    const MyView = MyList.map(MyList=>{
+
+        return   
+
+    });
+
     return (
             <Fragment>
 
@@ -42,10 +54,10 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
                             <BarChart width={300} height={410} data={this.state.data}>
 
-                            <XAxis dataKey={'Technolgy'}/>
+                            <XAxis dataKey={'x_data'}/>
                             <Tooltip />
                                 
-                            <Bar dataKey={'Projects'} fill={blue}>
+                            <Bar dataKey={'y_data'} fill={blue}>
 
 
                             </Bar>
@@ -59,22 +71,7 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
                         <Col lg={6} md={12} sm={12}>
 
-                        <p style={{textAlign:'justify'}}> React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            </p>
-
-                            <p style={{textAlign:'justify'}}> React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
-                            React is a free and open-source front-end JavaScript library for building user 
-                            interfaces based on components. It is maintained by Meta and a community of individual developers and companies.
+                        <p style={{textAlign:'justify'}}>{ReactHtmlParser(this.state.techdesc) }
                             
                             </p>
                         
