@@ -6,7 +6,7 @@ import 'video-react/dist/video-react.css'
 import { Player, BigPlayButton } from 'video-react'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
+
 
 
 class Video extends Component {
@@ -44,7 +44,7 @@ componentDidMount(){
                     <Row>
                     <Col lg={6} md={6} sm={12} className="videText">
                             <p className="serviceDescription text-justify" style={{ textAlign: 'justify' }}>
-                            { ReactHtmlParser(this.state.video_desciption) }
+                            { this.state.video_desciption }
                             </p>
                         </Col>
 

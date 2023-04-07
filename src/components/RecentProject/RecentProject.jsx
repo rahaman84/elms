@@ -38,7 +38,7 @@ RestClient.GetRequest(AppUrl.ProjectHome).then(result=>{
         return  <Col lg={4} md={6} sm={12}>
 
         <Card className="projectCard">
-            <Card.Img variant="top" src={MyList.img_two} />
+            <Card.Img variant="top" src={MyList.img_one} />
             <Card.Body>
             <Card.Title className="serviceName">{MyList.project_name}</Card.Title>
               <Card.Text className="serviceDescription">

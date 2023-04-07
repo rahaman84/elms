@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
+
 
 
 class PrivacyDescription extends Component {
@@ -30,7 +30,7 @@ class PrivacyDescription extends Component {
                                    <hr />
                                    <p className="serviceDescription">
 
-                                        {ReactHtmlParser(this.state.privacydesc)}
+                                        {this.state.privacydesc}
 
 
                                    </p>

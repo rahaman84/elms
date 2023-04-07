@@ -36,7 +36,7 @@ class AppRouter extends Component {
           <Route exact path="/trems" element={<TremsPage/>} />  
           <Route exact path="/privacy" element={<PrivacyPage/>} />
 
-          <Route exact path="/ProjectDetails/:projectID/:projectName" component={ProjectDetailPage} />
+          <Route exact path="/ProjectDetails/:projectID/:projectName" element={<ProjectDetails />} />
           {/* <Route exact path="/ProjectDetails/:projectID" element={<ProjectDetails />} />  */}
           <Route exact path="/coursedetails" element={<CourseDetailsPage/>} />
      

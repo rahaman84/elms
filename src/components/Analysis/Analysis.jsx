@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
+
 
  class Analysis extends Component {
 
@@ -71,7 +71,7 @@ import ReactHtmlParser from 'react-html-parser';
 
                         <Col lg={6} md={12} sm={12}>
 
-                        <p style={{textAlign:'justify'}}>{ReactHtmlParser(this.state.techdesc) }
+                        <p style={{textAlign:'justify'}}>{this.state.techdesc }
                             
                             </p>
                         

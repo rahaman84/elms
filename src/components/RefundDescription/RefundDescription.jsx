@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
 
 class RefundDescription extends Component {
 
@@ -28,7 +27,7 @@ class RefundDescription extends Component {
                             <h1 className="serviceName">Data Protection Principles</h1>
                             <hr />
                             <p className="serviceDescription">
-                                {ReactHtmlParser(this.state.refunddesc)}
+                                {this.state.refunddesc}
 
 
 

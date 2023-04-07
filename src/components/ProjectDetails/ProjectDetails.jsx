@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCheckSquare} from '@fortawesome/free-solid-svg-icons'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
+
 
 
 class ProjectDetails extends Component {
@@ -58,11 +58,11 @@ class ProjectDetails extends Component {
           
           <h1 className="projectDetailsText"> {this.state.projectname} </h1>  
              <p className="detailsName">
-             { ReactHtmlParser(this.state.project_description) }
+             { this.state.project_description }
                   </p>
 
                   <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} />
-              { ReactHtmlParser(this.state.project_features) } </p>
+              { this.state.project_features } </p>
 
               <Button variant="info" href={this.state.live_preview}> Live Preview </Button>
 

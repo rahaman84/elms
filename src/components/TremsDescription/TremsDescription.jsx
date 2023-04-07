@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-import ReactHtmlParser from 'react-html-parser';
+
 
  class TremsDescription extends Component {
 
@@ -30,7 +30,7 @@ import ReactHtmlParser from 'react-html-parser';
      <p className="serviceDescription">
 
 
-     { ReactHtmlParser(this.state.tremsdesc) }
+     { this.state.tremsdesc }
 
      </p>
 
